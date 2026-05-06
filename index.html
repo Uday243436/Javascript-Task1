@@ -3,12 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fake Store Product Gallery</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <main class="app">
+        <header class="app-header">
+            <div>
+                <h1>Fake Store Products</h1>
+                <p class="subtitle">Fetch products from fakestoreapi.com and explore search, filter, sort, and cart features.</p>
+            </div>
+            <div class="controls-row">
+                <input id="searchInput" type="search" placeholder="Search by title..." aria-label="Search products">
+                <select id="categorySelect" aria-label="Filter by category">
+                    <option value="all">All categories</option>
+                </select>
+                <select id="sortSelect" aria-label="Sort by price">
+                    <option value="default">Sort by price</option>
+                    <option value="low-high">Low → High</option>
+                    <option value="high-low">High → Low</option>
+                </select>
+                <div class="cart-widget">Cart: <span id="cartCount">0</span></div>
+            </div>
+        </header>
+
+        <div id="statusMessage" class="status-message">Loading...</div>
+        <section id="productsGrid" class="products-grid"></section>
+
+        <div id="productModal" class="modal hidden" role="dialog" aria-modal="true">
+            <div class="modal-card">
+                <button id="modalClose" class="modal-close" aria-label="Close details">×</button>
+                <img id="modalImage" src="" alt="Product image">
+                <div class="modal-content">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-category" id="modalCategory"></p>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <p id="modalDescription"></p>
+                    <button id="modalAddCart" class="btn btn-primary">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script src="./script.js"></script>
     <script src="./script2.js"></script>
     <script src="./script3.js"></script>
-    <script src="./script4.js"></script>   
+    <script src="./script4.js"></script>
+    <script src="./script5.js"></script>
 </body>
 </html>
